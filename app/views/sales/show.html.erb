@@ -1,0 +1,13 @@
+<%# app/views/sales/show.html.erb %>
+<h2>Product</h2>
+<div><%= Product.find(@sale.Product_id).product_name_with_id %></div>
+<h2>Unit Price</h2>
+<div><%= Product.find(@sale.Product_id).price %></div>
+<h2>Quarter</h2>
+<div><%= Quarter.find(@sale.Quarter_id).quarter_title %></div>
+<h2>Quantity</h2>
+<div><%= @sale.quantity %></div>
+<h2>Total</h2>
+<div>$<%= @sale.quantity * Product.find(@sale.Product_id).price %></div>
+
+<%= link_to "Back", sales_path %>

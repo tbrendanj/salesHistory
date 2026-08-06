@@ -1,0 +1,23 @@
+<%# app/views/sales/new.html.erb %>
+<h1>Add sale</h1>
+
+<%= form_with model: @sale do |form| %>
+  <div>
+    <%= form.label "Product" %>
+    <%= form.collection_select :Product_id, Product.all, :id, :product_name_with_id %>
+  </div>
+  <div>
+    <%= form.label "Quarter" %>
+    <%= form.collection_select :Quarter_id, Quarter.all, :id, :quarter_title %>
+  </div>
+  <div>
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, min: 0, step: 1 %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to "Cancel", sales_path %>

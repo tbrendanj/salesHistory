@@ -1,0 +1,5 @@
+<%- headers = ['Product_id', 'Quarter_id', 'quantity'] -%>
+<%= CSV.generate_line headers %>
+<%- @sales.each do |sale| -%>
+  <%= CSV.generate_line([sale.Product_id, sale.Quarter_id, sale.quantity]) -%>
+<%- end -%>

@@ -1,0 +1,13 @@
+<%# app/views/sales/index.html.erb %>
+
+<%= link_to "Add sale", new_sale_path %>
+<%= render partial: "partials/menu" %>
+<%= link_to "Export CSV", "/sales/export.csv" %>
+
+<div id="sales">
+  <% @sales.each do |sale| %>
+    <div>
+      <%= link_to sale.id, sale_path(sale.id) %>
+    </div>
+  <% end %>
+</div>

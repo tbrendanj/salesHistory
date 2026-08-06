@@ -1,0 +1,5 @@
+<%- headers = ['year', 'quarter_num'] -%>
+<%= CSV.generate_line headers %>
+<%- @quarters.each do |quarter| -%>
+  <%= CSV.generate_line([quarter.year, quarter.quarter_num]) -%>
+<%- end -%>

@@ -1,0 +1,13 @@
+<%# app/views/quarters/index.html.erb %>
+
+<%= link_to "Add quarter", new_quarter_path %>
+<%= render partial: "partials/menu" %>
+<%= link_to "Export CSV", "/quarters/export.csv" %>
+
+<div id="quarters">
+  <% @quarters.each do |quarter| %>
+    <div>
+      <%= link_to quarter.quarter_title, quarter_path(quarter.id) %>
+    </div>
+  <% end %>
+</div>

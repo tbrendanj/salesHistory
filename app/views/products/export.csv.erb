@@ -1,0 +1,5 @@
+<%- headers = ['name', 'price'] -%>
+<%= CSV.generate_line headers %>
+<%- @products.each do |product| -%>
+  <%= CSV.generate_line([product.name, product.price]) -%>
+<%- end -%>
